@@ -1,0 +1,18 @@
+.button {
+    background-color: gold;
+    border-radius: 6px;
+    color:black;
+}
+
+#newsfeed {
+    background-color: gray;
+    color:blue;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
