@@ -162,7 +162,7 @@
       // console.log(result)
       result.src = obj["src"]; // 画像パス
       result.alt = obj["alt"]; // 代替テキスト
-      result.width = obj["width"]; // 画像の幅
+      result.width = 120; // 画像の幅
       return result;
       // let content_area = document.getElementById("content_area");
       // content_area.appendChild(result);

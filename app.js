@@ -62,10 +62,12 @@ window.addEventListener("load", () => {
     postEl.append(friendEl);
 
     // 友達ごとに色を設定
-    console.log(bacefook.friendNames.indexOf())
-    console.log(friendColors[index])
-    if (friendColors[index]) {
-      friendEl.style.border = `3px solid ${friendColors[index]}`;
+    console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend))
+    // console.log(friendColors[index])
+    friendNum=bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
+
+    if (friendColors[friendNum]) {
+      friendEl.style.border = `3px solid ${friendColors[friendNum]}`;
     } else {
       friendEl.style.border = "3px solid #ccc"; // デフォルトの色
     }
@@ -74,12 +76,13 @@ window.addEventListener("load", () => {
       "MMMM Do YYYY, h:mm:ss a"
     );
     postEl.append(momentTime);
+    const brElement = document.createElement("br");
+    postEl.append(brElement);
     // console.log(bacefook.newsfeed[index].timestamp)
 
     postEl.append(bacefook.newsfeed[index].image);
     // console.log(bacefook.newsfeed[index]);
     // 改行を追加
-    const brElement = document.createElement("br");
     postEl.append(brElement);
 
     containerEl.append(postEl);
@@ -96,7 +99,23 @@ window.addEventListener("load", () => {
       // consol.log(currentInfo.value);
       currentInfo[j].remove();
     }
-    console.log(bacefook.newsfeed.length);
+
+    //自分のコメント追加
+    let myObj = {};
+    //myObj.text = "テストコメント";
+    myObj.text = input.value;
+    myObj.timestamp = new Date();
+    myObj.friend = localStorage.username;
+    let result = document.createElement("img");
+      // console.log(result)
+      result.src = "images/cycle.jpeg"; // 画像パス
+      result.alt = "sss"; // 代替テキスト
+      result.width = 200; // 画像の幅
+    myObj.image = result;
+    // console.log("time",myObj.timestamp)
+    bacefook.newsfeed.push(myObj);
+
+    // console.log(bacefook.newsfeed.length);
     for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
       console.log("BTN");
       const post = bacefook.newsfeed[index];
@@ -110,22 +129,26 @@ window.addEventListener("load", () => {
       postEl.innerText = post.text;
       postEl.append(friendEl);
 
-      // 友達ごとに色を設定
-      // console.log(friendColors[index])
-      if (friendColors[index]) {
-        friendEl.style.border = `3px solid ${friendColors[index]}`;
-      } else {
-        friendEl.style.border = "3px solid #ccc"; // デフォルトの色
-      }
+    // 友達ごとに色を設定
+    console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend))
+    // console.log(friendColors[index])
+    friendNum=bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
+
+    if (friendColors[friendNum]) {
+      friendEl.style.border = `3px solid ${friendColors[friendNum]}`;
+    } else {
+      friendEl.style.border = "3px solid #ccc"; // デフォルトの色
+    }
 
       const momentTime = moment(bacefook.newsfeed[index].timestamp).format(
         "MMMM Do YYYY, h:mm:ss a"
       );
       postEl.append(momentTime);
+      const brElement = document.createElement("br");
+      postEl.append(brElement);
 
       postEl.append(bacefook.newsfeed[index].image);
 
-      const brElement = document.createElement("br");
       postEl.append(brElement);
 
       containerEl.append(postEl);

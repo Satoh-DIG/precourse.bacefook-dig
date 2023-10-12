@@ -1,28 +1,52 @@
-.button {
-    background-color: gold;
-    border-radius: 6px;
-    color:black;
-}
-
-.flame {
-    border: 10px; /* 枠線のスタイルを設定 */
-    padding: 10px; /* テキストと枠線の間隔を設定 */
-    margin: 10px 0; /* テキスト要素の上下のマージンを設定 */
-    background-color: green;
-    border-radius: 6px;
-    color:blue;
-}
-
 body {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  background-color: rgb(167, 165, 165);
+  border-radius: 6px;
+  color: black;
+  background-image: url(/images/chip_performance_hw__6ytcie74ao22_medium_2x.png);
+  background-size: 400px;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width:300px;
+  margin:auto;
+}
+
+img {
+  margin:auto;
+  display:block;
+}
+
+#newsfeed {
+  overflow:auto;
+  width:300px;height:580px;
+}
+#newsfeed::-webkit-scrollbar{
+  display:none;
+}
+
+div {
+  text-align: center;
+  /* width: 400px; max-width:100%; */
+  /* height: 200px; */
+}
+
+h1{
+  height: 40%;
+  text-align: center;
+}
+
+form{
+  text-align: center;
+}
+
 /* スタイルの定義 */
 .friend {
-    border: 10px; /* 枠線のスタイルを設定 */
-    padding: 10px; /* テキストと枠線の間隔を設定 */
-    margin: 10px 0; /* テキスト要素の上下のマージンを設定 */
-  }
+  border: 10px;
+  /* 枠線のスタイルを設定 */
+  padding: 10px;
+  /* テキストと枠線の間隔を設定 */
+  margin: 10px;
+  /* テキスト要素の上下のマージンを設定 */
+  /* width: 200px; */
+  /* text-align:center; */
+}
