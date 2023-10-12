@@ -1,3 +1,9 @@
+/**
+ * ローカルストレージの内容をクリアするには、以下のコマンドを
+ * コンソールで実行する。
+ */
+// localStorage.clear()
+
 // friendColors 配列をグローバルスコープで定義
 const friendColors = ["red", "blue", "green", "pink", "yellow", "purple"];
 
@@ -35,13 +41,14 @@ window.addEventListener("load", () => {
 
   // 変数userTextに、userInput内のinnerText内のテキストを格納する
   let userText = document.getElementById("userInput").value;
-  console.log(userText);
+  // console.log(userText);
   // ボタン作成
   // ボタン要素を作成
   let btn = document.createElement("button");
   // ボタンのテキストを設定
   btn.innerHTML = "📤";
   btn.id = "btnId";
+
   // ボタンを追加 （コメント欄のフォームに追加する）
   form.appendChild(btn);
   //**********************************************
@@ -61,7 +68,7 @@ window.addEventListener("load", () => {
     postEl.innerText = post.text;
 
     // 友達ごとに色を設定
-    console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend));
+    // console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend));
     // console.log(friendColors[index])
     friendNum = bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend);
 
@@ -120,7 +127,7 @@ window.addEventListener("load", () => {
 
     // console.log(bacefook.newsfeed.length);
     for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
-      console.log("BTN");
+      // console.log("BTN");
       const post = bacefook.newsfeed[index];
 
       const friendEl = document.createElement("div");
@@ -132,9 +139,9 @@ window.addEventListener("load", () => {
       postEl.innerText = post.text;
 
       // 友達ごとに色を設定
-      console.log(
-        bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
-      );
+      // console.log(
+      //   bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
+      // );
       // console.log(friendColors[index])
       friendNum = bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend);
 

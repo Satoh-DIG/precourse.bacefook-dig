@@ -3,12 +3,18 @@ body {
   border-radius: 6px;
   color: black;
   background-image: url(/images/chip_performance_hw__6ytcie74ao22_medium_2x.png);
+  /* background-image: url(/images/iphone-x-later-force-restart-animation.gif); */
   background-size: 400px;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   width:300px;
   margin:auto;
+  /* filter: drop-shadow(5px 5px 5px #000000); */
+}
+
+#btnId{
+  font-size:130%;
 }
 
 img {
@@ -33,10 +39,15 @@ div {
 h1{
   height: 40%;
   text-align: center;
+  font-size:170%;
 }
 
 form{
   text-align: center;
+}
+
+#userInput{
+  font-size:130%;
 }
 
 /* スタイルの定義 */

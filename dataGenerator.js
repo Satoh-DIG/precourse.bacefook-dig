@@ -209,8 +209,8 @@
       setTimeout(scheduler, (3 + Math.random() * 5) * 1000); 
       // generate a new post every 3 to 8 seconds
       // console.log("scheduler")
-      console.log(bacefook.newsfeed);
+      // console.log(bacefook.newsfeed);
     };
-    console.log("scheduler")
+    // console.log("scheduler")
     scheduler();
   })();
