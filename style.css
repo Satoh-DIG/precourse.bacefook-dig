@@ -4,8 +4,12 @@
     color:black;
 }
 
-#newsfeed {
-    background-color: gray;
+.flame {
+    border: 10px; /* 枠線のスタイルを設定 */
+    padding: 10px; /* テキストと枠線の間隔を設定 */
+    margin: 10px 0; /* テキスト要素の上下のマージンを設定 */
+    background-color: green;
+    border-radius: 6px;
     color:blue;
 }
 
@@ -16,3 +20,9 @@ body {
     height: 100vh;
   }
   
+/* スタイルの定義 */
+.friend {
+    border: 10px; /* 枠線のスタイルを設定 */
+    padding: 10px; /* テキストと枠線の間隔を設定 */
+    margin: 10px 0; /* テキスト要素の上下のマージンを設定 */
+  }
