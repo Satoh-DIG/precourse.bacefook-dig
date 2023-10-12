@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
   // ボタン要素を作成
   let btn = document.createElement("button");
   // ボタンのテキストを設定
-  btn.innerHTML = "コメント追加";
+  btn.innerHTML = "📤";
   btn.id = "btnId";
   // ボタンを追加 （コメント欄のフォームに追加する）
   form.appendChild(btn);
@@ -59,12 +59,11 @@ window.addEventListener("load", () => {
     const postEl = document.createElement("div");
     postEl.className = "current-info";
     postEl.innerText = post.text;
-    postEl.append(friendEl);
 
     // 友達ごとに色を設定
-    console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend))
+    console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend));
     // console.log(friendColors[index])
-    friendNum=bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
+    friendNum = bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend);
 
     if (friendColors[friendNum]) {
       friendEl.style.border = `3px solid ${friendColors[friendNum]}`;
@@ -72,17 +71,21 @@ window.addEventListener("load", () => {
       friendEl.style.border = "3px solid #ccc"; // デフォルトの色
     }
 
+    //イメージ貼る
+    postEl.append(bacefook.newsfeed[index].image);
+    //時間貼る
     const momentTime = moment(bacefook.newsfeed[index].timestamp).format(
       "MMMM Do YYYY, h:mm:ss a"
     );
     postEl.append(momentTime);
+
+    // 改行を追加
     const brElement = document.createElement("br");
     postEl.append(brElement);
-    // console.log(bacefook.newsfeed[index].timestamp)
 
-    postEl.append(bacefook.newsfeed[index].image);
-    // console.log(bacefook.newsfeed[index]);
-    // 改行を追加
+    // 友達の名前貼る
+    postEl.append(friendEl);
+
     postEl.append(brElement);
 
     containerEl.append(postEl);
@@ -107,10 +110,10 @@ window.addEventListener("load", () => {
     myObj.timestamp = new Date();
     myObj.friend = localStorage.username;
     let result = document.createElement("img");
-      // console.log(result)
-      result.src = "images/cycle.jpeg"; // 画像パス
-      result.alt = "sss"; // 代替テキスト
-      result.width = 200; // 画像の幅
+    // console.log(result)
+    result.src = "images/cycle.jpeg"; // 画像パス
+    result.alt = "sss"; // 代替テキスト
+    result.width = 200; // 画像の幅
     myObj.image = result;
     // console.log("time",myObj.timestamp)
     bacefook.newsfeed.push(myObj);
@@ -127,28 +130,31 @@ window.addEventListener("load", () => {
       const postEl = document.createElement("div");
       postEl.className = "current-info";
       postEl.innerText = post.text;
-      postEl.append(friendEl);
 
-    // 友達ごとに色を設定
-    console.log(bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend))
-    // console.log(friendColors[index])
-    friendNum=bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
+      // 友達ごとに色を設定
+      console.log(
+        bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend)
+      );
+      // console.log(friendColors[index])
+      friendNum = bacefook.friendNames.indexOf(bacefook.newsfeed[index].friend);
 
-    if (friendColors[friendNum]) {
-      friendEl.style.border = `3px solid ${friendColors[friendNum]}`;
-    } else {
-      friendEl.style.border = "3px solid #ccc"; // デフォルトの色
-    }
+      if (friendColors[friendNum]) {
+        friendEl.style.border = `3px solid ${friendColors[friendNum]}`;
+      } else {
+        friendEl.style.border = "3px solid #ccc"; // デフォルトの色
+      }
 
+      postEl.append(bacefook.newsfeed[index].image);
       const momentTime = moment(bacefook.newsfeed[index].timestamp).format(
         "MMMM Do YYYY, h:mm:ss a"
       );
       postEl.append(momentTime);
+
       const brElement = document.createElement("br");
       postEl.append(brElement);
 
-      postEl.append(bacefook.newsfeed[index].image);
-
+      postEl.append(friendEl);
+      
       postEl.append(brElement);
 
       containerEl.append(postEl);
